@@ -34,3 +34,6 @@ I would like to filter bookmarks by tags
 As a time-pressed user
 So that I can manage only my bookmarks
 I would like to log in and manage 
+
+# Domain model 
+(./public/images/mermaid-diagram-20200309145612.png)
