@@ -1,5 +1,5 @@
 # bookmark_project
-This project is to build a bookmark manager according to following 
+This project is to build a bookmark manager according to following user stories.
 
 # User stories
 1.
