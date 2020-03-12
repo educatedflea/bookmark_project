@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/bookmark'
+
 class BookmarkManager < Sinatra::Base
 
 	get '/' do 
@@ -20,6 +21,13 @@ class BookmarkManager < Sinatra::Base
 		# url = params['url']
 		# connection = PG.connect(dbname:'bookmark_manager_test')
 		# connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+		redirect '/bookmarks'
+	end 
+
+	enable :sessions, :method_override
+
+	delete '/bookmarks/:id' do 
+		Bookmark.delete(id: params[:id])
 		redirect '/bookmarks'
 	end 
 
