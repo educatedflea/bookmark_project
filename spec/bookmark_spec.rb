@@ -4,9 +4,9 @@ describe Bookmark do
 	describe '.all' do 
 		it 'returns all the bookmark' do 
 			# add tests data
-			Bookmark.create(url:"http://www.makersacademy.com")
-			Bookmark.create(url:"http://www.destroyallsoftware.com")
-			Bookmark.create(url: "http://www.google.com")
+			Bookmark.create(url:"http://www.makersacademy.com",title: 'Makers')
+			Bookmark.create(url:"http://www.destroyallsoftware.com",title: 'Destroyer')
+			Bookmark.create(url: "http://www.google.com",title: 'Google')
 
 			bookmarks = Bookmark.all
 			expect(bookmarks).to include "http://www.makersacademy.com"
@@ -17,8 +17,10 @@ describe Bookmark do
 
 	describe '.create' do 
 		it 'create a new bookmark' do 
-			Bookmark.create(url: 'http://testbookmark.com')
-			expect(Bookmark.all).to include 'http://testbookmark.com'
+			bookmark = Bookmark.create(url: 'http://testbookmark.com', title: 'Test Bookmark').first
+
+			expect(bookmark['url']).to eq 'http://testbookmark.com'
+			expect(bookmark['title']).to eq 'Test Bookmark'
 		end 
 	end 
 end 
